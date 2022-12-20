@@ -1,0 +1,13 @@
+.loginContainer {
+    height: 100vh;
+}
+
+#form {
+    height: 50%;
+    background-color: rgba(120, 107, 107, 0.659);
+    border-color: white;
+    border-width: 20px;
+    border-radius: 20px;
+    border-style: hidden;
+    box-shadow: 40px 35px 100px 1px white;
+}

@@ -10,6 +10,10 @@ import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
 import {createTheme, ThemeProvider} from '@mui/material/styles';
 import {useNavigate} from 'react-router-dom';
+import Grid from '@mui/material/Grid'
+import './App.css';
+import './Login.css';
+import { flexbox } from '@mui/system';
 
 // creds: https://github.com/mui/material-ui/blob/v5.10.14/docs/
 // data/material/getting-started/templates/sign-in/SignIn.js
@@ -60,35 +64,32 @@ function Login() {
   };
 
   return (
-    <ThemeProvider theme={theme}>
-      <Container component="main" maxWidth="xs">
-        <CssBaseline />
-        <Box
-          sx={{
-            marginTop: 8,
-            display: 'flex',
-            flexDirection: 'column',
-            alignItems: 'center',
-          }}
-        >
-          <Avatar sx={{m: 1, bgcolor: 'secondary.main'}}>
-            <LockOutlinedIcon />
-          </Avatar>
-          <Typography component="h1" variant="h5">
-                    Login
+    <Container class='loginContainer' component='main' maxWidth='xs'>
+      <Box
+        sx={{
+          margin: 0,
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'center',
+          flexDirection: 'column',
+          height: '100vh',
+          input:{color: 'white', letterSpacing: 3, fontFamily: 'Times'},
+          label:{color: 'white', letterSpacing: 3, fontFamily: 'Times'}
+        }}>
+          <Typography 
+            sx={{fontFamily: 'Times', color: 'white', fontStyle: 'italic'}}
+          >
+              Project Displayer
           </Typography>
-          {/* Email password sign in*/}
-          <Box component="form" onSubmit={handleSubmit} sx={{mt: 1}}>
+          <Box id='form' component="form" onSubmit={handleSubmit}>
             <TextField
               margin="normal"
               required
-              fullWidth
               label="Email Address"
               id="email"
-              name="email"
               type="email"
               onChange={handleInputChange}
-              autoFocus
+              sx={{width: '80%', ml: '10%'}}
             />
             <TextField
               margin="normal"
@@ -100,23 +101,25 @@ function Login() {
               type="password"
               autoComplete="current-password"
               onChange={handleInputChange}
+              sx={{mt: 0, width: '80%', ml: '10%'}}
             />
             {/* Sign in Button*/}
             <Button
               type="submit"
-              id="submit"
-              fullWidth
-              variant="contained"
-              aria-label="submit"
-              sx={{mt: 3, mb: 2}}
+              sx={{ml: '40%', mt: 3, mb: 2, color: 'white', width: '20%'}}
             >
                         Sign in
             </Button>
+            <Button
+              type="submit"
+              fullWidth
+              sx={{color: 'white', ml: '40%', width: '20%'}}
+            >
+                        Sign up
+            </Button>
           </Box>
-        </Box>
-        <Copyright sx={{mt: 8, mb: 4}} />
-      </Container>
-    </ThemeProvider>
+      </Box>
+    </Container>
   );
 }
 

@@ -3,6 +3,7 @@ import {BrowserRouter, Route, Routes} from 'react-router-dom';
 
 import Login from './Login';
 import Home from './Home';
+import './App.css';
 
 /**
  * Simple component with no state.
