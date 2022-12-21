@@ -1,0 +1,1 @@
+INSERT INTO people(email, hash, people) VALUES ('averev@shareasale.com', '$2b$10$BJPMsLIdVxqqZ7LTfnMZgujX16nr.X6pxos7o6mvi/gzMiBRW7.cW','{"name":"Andy Vere","avatar":"https://www.shareicon.net/data/512x512/2016/07/26/802043_man_512x512.png"}');

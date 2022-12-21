@@ -46,7 +46,7 @@ function Login() {
         history('/');
       })
       .catch((err) => {
-        alert('Error logging in, please try again');
+        alert('Error logging in, please try again', err);
       });
   };
 
@@ -57,7 +57,7 @@ function Login() {
   };
 
   return (
-    <Container class='loginContainer' component='main' maxWidth='xs'>
+    <Container id='loginContainer' component='main' maxWidth='xs'>
       <Box
         sx={{
           margin: 0,
@@ -79,6 +79,7 @@ function Login() {
               margin="normal"
               required
               label="Email Address"
+              name="email"
               id="email"
               type="email"
               onChange={handleInputChange}
@@ -92,11 +93,9 @@ function Login() {
               label="Password"
               id="password"
               type="password"
-              autoComplete="current-password"
               onChange={handleInputChange}
               sx={{mt: 0, width: '80%', ml: '10%'}}
             />
-            {/* Sign in Button*/}
             <Button
               type="submit"
               sx={{ml: '40%', mt: 3, mb: 2, color: 'white', width: '20%'}}

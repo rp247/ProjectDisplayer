@@ -2,7 +2,6 @@ const jwt = require('jsonwebtoken');
 const db = require('./db');
 
 exports.login = async (req, res) => {
-    console.log('AUTH LOGIN AUTH LOGIN AUTH LOGIN')
   const {email, password} = req.body;
   const user = await db.login(email, password);
   if (user) {
