@@ -10,6 +10,7 @@ const pool = new Pool({
 });
 
 exports.login = async (email, pwd) => {
+    console.log('DB LOGIN DB LOGIN DB LOGIN')
     return 'hi';
 };
 
