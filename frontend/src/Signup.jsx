@@ -44,43 +44,43 @@ function Signup() {
           justifyContent: 'center',
           flexDirection: 'column',
           height: '100vh',
-          input:{color: 'white', letterSpacing: 3, fontFamily: 'Times'},
-          label:{color: 'white', letterSpacing: 3, fontFamily: 'Times'}
+          input: {color: 'white', letterSpacing: 3, fontFamily: 'Times'},
+          label: {color: 'white', letterSpacing: 3, fontFamily: 'Times'},
         }}>
-          <Typography 
-            sx={{fontFamily: 'Times', color: 'white', fontStyle: 'italic'}}
-          >
+        <Typography
+          sx={{fontFamily: 'Times', color: 'white', fontStyle: 'italic'}}
+        >
               Sign up - Project Displayer
-          </Typography>
-          <Box id='form' component="form" onSubmit={handleSubmit}>
-            <TextField
-              margin="normal"
-              required
-              label="Email Address"
-              id="email"
-              type="email"
-              onChange={handleInputChange}
-              sx={{width: '80%', ml: '10%'}}
-            />
-            <TextField
-              margin="normal"
-              required
-              fullWidth
-              name="password"
-              label="Password"
-              id="password"
-              type="password"
-              autoComplete="current-password"
-              onChange={handleInputChange}
-              sx={{mt: 0, width: '80%', ml: '10%'}}
-            />
-            <Button
-              type="submit"
-              sx={{ml: '40%', mt: 3, mb: 2, color: 'white', width: '20%'}}
-            >
+        </Typography>
+        <Box id='form' component="form" onSubmit={handleSubmit}>
+          <TextField
+            margin="normal"
+            required
+            label="Email Address"
+            id="email"
+            type="email"
+            onChange={handleInputChange}
+            sx={{width: '80%', ml: '10%'}}
+          />
+          <TextField
+            margin="normal"
+            required
+            fullWidth
+            name="password"
+            label="Password"
+            id="password"
+            type="password"
+            autoComplete="current-password"
+            onChange={handleInputChange}
+            sx={{mt: 0, width: '80%', ml: '10%'}}
+          />
+          <Button
+            type="submit"
+            sx={{ml: '40%', mt: 3, mb: 2, color: 'white', width: '20%'}}
+          >
                 Sign up
-            </Button>
-          </Box>
+          </Button>
+        </Box>
       </Box>
     </Container>
   );
