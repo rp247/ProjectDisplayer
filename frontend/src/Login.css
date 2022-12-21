@@ -11,3 +11,17 @@
     border-style: hidden;
     box-shadow: 40px 35px 100px 1px white;
 }
+
+#fileUpload {
+    height: 50px;
+    width: 50px;
+    margin: auto;
+    margin-top: 1px;
+  }
+
+img{
+    max-height:50px;
+    max-width:50px;
+    height:auto;
+    width:auto;
+}

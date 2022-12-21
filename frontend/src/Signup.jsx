@@ -16,6 +16,8 @@ import './Login.css';
 function Signup() {
   const [user, setUser] = React.useState({email: '', password: ''});
   const history = useNavigate();
+  const rand = Math.floor(Math.random() * (121)) + 1;
+  const profileImg = '/uploads/default/profile/' + rand + '.png';
 
   React.useEffect(() => {
     sessionStorage.removeItem('user');
@@ -53,6 +55,19 @@ function Signup() {
               Sign up - Project Displayer
         </Typography>
         <Box id='form' component="form" onSubmit={handleSubmit}>
+          <div id='fileUpload'>
+            <img src={profileImg}></img>
+          </div>
+          <TextField
+            margin="normal"
+            required
+            label="Name"
+            id="name"
+            name="name"
+            type="text"
+            onChange={handleInputChange}
+            sx={{width: '80%', ml: '10%'}}
+          />
           <TextField
             margin="normal"
             required
@@ -60,7 +75,7 @@ function Signup() {
             id="email"
             type="email"
             onChange={handleInputChange}
-            sx={{width: '80%', ml: '10%'}}
+            sx={{mt: 0, width: '80%', ml: '10%'}}
           />
           <TextField
             margin="normal"
@@ -76,7 +91,7 @@ function Signup() {
           />
           <Button
             type="submit"
-            sx={{ml: '40%', mt: 3, mb: 2, color: 'white', width: '20%'}}
+            sx={{ml: '40%', mt: 0, mb: 1, color: 'white', width: '20%'}}
           >
                 Sign up
           </Button>
