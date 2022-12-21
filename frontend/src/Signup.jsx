@@ -1,26 +1,19 @@
 import * as React from 'react';
-import Avatar from '@mui/material/Avatar';
 import Button from '@mui/material/Button';
-import CssBaseline from '@mui/material/CssBaseline';
 import TextField from '@mui/material/TextField';
-import Link from '@mui/material/Link';
 import Box from '@mui/material/Box';
-import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
 import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
-import {createTheme, ThemeProvider} from '@mui/material/styles';
 import {useNavigate} from 'react-router-dom';
-import Grid from '@mui/material/Grid'
 import './App.css';
 import './Login.css';
-import { flexbox } from '@mui/system';
 
 /**
  * Simple component with no state.
  *
  * @return {object} JSX
  */
-function Login() {
+function Signup() {
   const [user, setUser] = React.useState({email: '', password: ''});
   const history = useNavigate();
 
@@ -38,12 +31,7 @@ function Login() {
   const handleSubmit = async (event) => {
     event.preventDefault();
     console.log('submit ', JSON.stringify(user));
-  };
-
-  const handleSignUp = async (event) => {
-    event.preventDefault();
-    console.log('signup ');
-    history('/signup');
+    history('/');
   };
 
   return (
@@ -62,7 +50,7 @@ function Login() {
           <Typography 
             sx={{fontFamily: 'Times', color: 'white', fontStyle: 'italic'}}
           >
-              Project Displayer by Ruchit Patel
+              Sign up - Project Displayer
           </Typography>
           <Box id='form' component="form" onSubmit={handleSubmit}>
             <TextField
@@ -86,20 +74,11 @@ function Login() {
               onChange={handleInputChange}
               sx={{mt: 0, width: '80%', ml: '10%'}}
             />
-            {/* Sign in Button*/}
             <Button
               type="submit"
               sx={{ml: '40%', mt: 3, mb: 2, color: 'white', width: '20%'}}
             >
-                        Sign in
-            </Button>
-            <Button
-              type="submit"
-              fullWidth
-              onClick={handleSignUp}
-              sx={{color: 'white', ml: '40%', width: '20%'}}
-            >
-              Sign up
+                Sign up
             </Button>
           </Box>
       </Box>
@@ -107,4 +86,4 @@ function Login() {
   );
 }
 
-export default Login;
+export default Signup;
