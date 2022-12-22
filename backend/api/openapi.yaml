@@ -36,6 +36,44 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/UnexpectedError'
+  
+  /signup:
+    post:
+      description: Signup
+      requestBody:
+        description: Request Body
+        required: true
+        content:
+          application/json:
+            schema:
+              allOf:
+                - $ref: '#/components/schemas/Credentials'
+                - type: object
+                  properties:
+                    name:
+                      type: string
+                    avatar:
+                      type: string
+                  required:
+                    - name
+                    - avatar
+      responses:
+        200:
+          description: Login Response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/User'
+        409:
+          description: User already exists
+        default:
+          description: Unexpected Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+              
+                
 
 components:
   schemas:
